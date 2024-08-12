@@ -1,0 +1,37 @@
+
+/* #heading{
+    color :#25b88e
+/* }  */
+
+/* id , class , tagName */
+
+div{
+    color :mediumslateblue
+}
+
+/* color - inherited */
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#heading{
+     font-family: "Lato", sans-serif;
+    font-size : 50px;
+    font-weight: 900;
+    font-style: italic;
+
+}
+
+#para{
+    /* give space between two line */
+    line-height: 40px;
+    /* gives spacing between two words */
+    word-spacing: 10px;
+    /* gives spacing between two letters */
+    letter-spacing: 10px;
+}
+

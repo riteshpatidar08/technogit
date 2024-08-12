@@ -1,0 +1,42 @@
+#para1 {
+  background-color: mediumaquamarine;
+  padding: 10px;
+  position: static;
+  top: 100px;
+  right: 100px;
+}
+
+#para2 {
+  background-color: mediumorchid;
+  padding: 10px;
+  position: relative;
+  top: 200px;
+}
+
+#para3 {
+  background-color: mediumslateblue;
+  padding: 10px;
+  position: absolute;
+  top: 20px;
+  z-index: -1;
+}
+
+body {
+  height: 2000px;
+}
+
+/* div {
+  background-color: mediumorchid;
+  padding: 10px;
+  position: sticky;
+  top: 10px;
+} */
+
+a:visited{
+    color : red
+}
+
+i:hover{
+    color :red
+}
+/* hover , active , visited */

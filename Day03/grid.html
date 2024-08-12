@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="flex.css" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: black;
+        padding: 10px;
+        height: 600px;
+        display: grid;
+        grid-template-areas:
+          'header header header'
+          'two two three'
+          'two two four';
+      }
+
+      .items {
+        padding: 20px;
+      }
+
+      .item1 {
+        grid-area: header;
+      }
+
+      .item2 {
+        grid-area: two;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="items item1" style="background-color: yellow">item1</div>
+      <div class="items item2" style="background-color: orange">item2</div>
+      <div class="items item3" style="background-color: red">item3</div>
+      <div class="items item4" style="background-color: rgb(128, 58, 0)">
+        item4
+      </div>
+      <div class="items item5" style="background-color: rgb(46, 101, 125)">
+        item5
+      </div>
+      <div class="items item6" style="background-color: rgb(107, 0, 128)">
+        item6
+      </div>
+      <div class="items item7" style="background-color: rgb(193, 165, 92)">
+        item7
+      </div>
+      <div class="items item8" style="background-color: rgb(128, 0, 60)">
+        item8
+      </div>
+      <div class="items item9" style="background-color: rgb(221, 117, 47)">
+        item9
+      </div>
+    </div>
+  </body>
+</html>

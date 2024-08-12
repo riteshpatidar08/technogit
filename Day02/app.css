@@ -1,0 +1,15 @@
+h1 {
+    margin : 90px;
+}
+
+a {
+    background-color: red;
+    height: 300px;
+    width: 300px;
+    display : inline-block
+}
+
+#word {
+    border: 2px solid red;
+    padding : 40px ;
+}
