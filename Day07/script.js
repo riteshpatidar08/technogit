@@ -334,9 +334,160 @@ console.log(fruits)
 
 //NOTE Slice Method(startIndex , endIndex); 
 //REVIEW - Returns a new array based on the startIndex and endIndex //"It will not modify the orignal array"// 
+//REVIEW always returns element endIndex - startIndex
+const numbersArray = [1,2,3,4,5,6,7 ,23] ;
+const slicedOutput = numbersArray.slice(1,3) ;
+
+console.log('originalArray', numbersArray) ;
+console.log('sliceArray',slicedOutput)
 
 
+//NOTE FOREACH (HIGHER ORDER METHODS OF ARRAY)
+//NOTE forEach accepts a callback function
+//NOTE "callback functions" are those functions which are pass in the params of other functions and then called by that function .
+//NOTE the functions which accepts callback are called "higher order functions"
+//NOTE in the case of the array we call them "higher order methods" which accepts a callback function.
+
+//REVIEW for creating a callback
+// IN ARROW FUNCTION = ()=>{}
+//normal function = function(){
+
+//}
+const forEachoutput = numbersArray.forEach((el)=>{
+console.log(el)
+})
+
+console.log(forEachoutput)
+//FIXME - forEach method always returns UNDEFINED
+
+//NOTE MAP METHOD (HIGHER ORDER METHODS OF ARRAY)
 
 
+const mappedOutput = numbersArray.map((el)=>{
+    return el*2 ;
+})
 
+console.log(mappedOutput)
+console.log(numbersArray)
 
+//REVIEW - always returns a new array based on the transformation we performed using the callback;
+//REVIEW -  not modify orginal array ;
+
+//NOTE FILTER (HIGHER ORDER METHODS OF ARRAY)
+
+const filterOutput = numbersArray.filter((el)=>{
+ return el > 3 ;
+})
+
+console.log(filterOutput);
+console.log(numbersArray) ;
+
+//NOTE FIND METHOD 
+//not returns an array , return a single value that match the condition first ;
+
+const findOutput = numbersArray.find((el)=>{
+    return el>3 ;
+})
+
+console.log(findOutput);
+console.log(numbersArray) ;
+
+//NOTE FINDINDEX ;
+const findIndexOutput = numbersArray.findIndex((el)=>{
+ return el>3 
+})
+console.log(findIndexOutput);
+console.log(numbersArray) ;
+
+//REVIEW ALWAYS RETURNS THE INDEX POSITION OF THE ELEMENT WHICH SATIFIES THE CALLBACK CONDITION ;
+
+//NOTE REDUCE (HIGHER ORDER METHOD ;
+//REVIEW REDUCE THE ARRAY INTO A SINGLE OUTPUT ;
+
+const reducedOuput = numbersArray.reduce((accumulator, el)=>{
+   console.log(accumulator,el);
+   return accumulator + el ;
+},0)
+
+console.log(reducedOuput) ;
+
+//REVERSE METHOD : 
+
+const reverseOutput = numbersArray.reverse();
+
+console.log(reverseOutput);
+console.log(numbersArray)
+
+//toReversed ;
+
+const toReversedOutput = numbersArray.toReversed();
+console.log(toReversedOutput);
+console.log(numbersArray)
+
+//SORT ;
+//NOTE FOR ASCENDING order you can use a-b in the callback
+//NOTE FOR DESCENDING ORDER you can use b-a
+const sortedOutput = numbersArray.sort((a,b)=>a-b);
+console.log(sortedOutput);
+console.log(numbersArray);
+
+//SOME RETURN TRUE OR FALSe ;
+
+const someOutput = numbersArray.some((el)=>{
+ return  el > 3 ;
+})
+
+console.log(someOutput) ;
+
+//EVERY
+
+const EveryOutput = numbersArray.every((el)=>{
+ return  el > 3 ;
+})
+
+console.log(EveryOutput) ;
+
+//TODO---------------OBJECT METHODS :
+
+//NOTE OBJECT.keys() used to extract the keys of the object ;
+
+const car = {
+    name : 'X1' ,
+    brand : 'BMW',
+    color : 'matte blue'
+}
+//NOTE - to delete the property on the object
+delete car.color ;
+console.log(car) 
+;
+const keyResult = Object.keys(car);
+console.log(keyResult)
+keyResult.forEach((key)=>{
+    console.log(key)
+})
+//OBJECT values
+const valuesResult = Object.values(car);
+console.log(valuesResult) ;
+valuesResult.forEach((values)=>{
+    console.log(values)
+})
+
+//OBject.entries 
+// [name ,x1]
+// ['brand', 'bmw']
+
+const entriesOutput = Object.entries(car) ;
+console.log(entriesOutput) ;
+
+entriesOutput.forEach((item)=>{
+  const [key, value] = item;
+  console.log(key , value)
+})
+
+//destructuring ; 
+
+// const users = ['alex','john'];
+// const user1 = users[0];
+// const user2 = users[1];
+const [user1, user2] = ['alex','john']
+console.log(user1, user2) ;
