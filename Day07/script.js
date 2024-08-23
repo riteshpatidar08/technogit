@@ -179,8 +179,8 @@ console.log(typeof c) ;
 const bool = 'true' ;
 console.log(typeof Boolean(bool))
 
-const str = '56';
-console.log(Number(str)) ; 
+// const str = '56';
+// console.log(Number(str)) ; 
 
 console.log(console)
 
@@ -479,8 +479,8 @@ valuesResult.forEach((values)=>{
 const entriesOutput = Object.entries(car) ;
 console.log(entriesOutput) ;
 
-entriesOutput.forEach((item)=>{
-  const [key, value] = item;
+entriesOutput.forEach(([key,value])=>{
+//   const [key, value] = item;
   console.log(key , value)
 })
 
@@ -491,3 +491,200 @@ entriesOutput.forEach((item)=>{
 // const user2 = users[1];
 const [user1, user2] = ['alex','john']
 console.log(user1, user2) ;
+
+//Object.assign
+
+// const obj1 = {a:1,b:2} ;
+// const obj2 = {b:3 , d:4} ;
+
+// //NOTE target and source 
+
+// Object.assign(obj2,obj1);
+// console.log(obj2)
+
+//Object.freeze 
+
+const products = {
+    name : 'TV',
+    price : 'Rs50000'
+}
+
+//NOTE in the case of the object.freeze method new properties cannot be added or modified.
+Object.freeze(products) ;
+products.name = 'washing machine' ;
+
+console.log(products);
+
+//NOTE ES6 DESTRUCTURING AND SPREAD OPERATOR 
+
+//NOTE DESTRUCTURING 
+
+const items = ['tv','ac','mobile'];
+
+const [first ,  , third] = items ;
+console.log(first,third)
+
+const [one,two,[three,four,five],six] = [1,2,[3,4,5],6];
+
+console.log(one,two,three,four,five,six) ;
+
+//OBJECT 
+const productss = {
+    name : 'mobile',
+    price : 'Rs500000'
+}
+//NOTE to change the default property name you can use  productName:varaibleName;
+//NOTE we can also add new property and assign them a default value "property = value"
+const {name : productName , price , category='electronics'} = productss ;
+console.log(productName,price,category) ;
+
+//NOTE destructuring used in the function params;
+function sum3([a,b,c]){
+//    console.log(item)
+//    const [a,b,c]= item ;
+   console.log(a,b,c)
+}
+
+console.log(sum3([1,2,3])) ;
+
+//NOTE SPREAD OPERATOR (...);
+const arr2 = [1,2,3] ;
+// const arr3 = arr2 ;
+
+// console.log(arr3) ;
+// arr3.push(4);
+// console.log(arr3,arr2)
+
+//NOTE COPYING THE ARRAY USING THE SPREAD OPERATOR 
+
+const arr3 = [...arr2];
+arr3.push(4);
+console.log(arr3, arr2) ;
+
+//NOTE CONCATE TWO ARRAYS ;
+
+const fruitss = ['mango','orange'];
+const vegetables = ['tomato', 'potato'] ;
+
+const grocery = ['grapes',...fruitss , ...vegetables,'pumpkin'] ;
+console.log(grocery)  ;
+
+//IN THE CASE OF OBJECT ;
+
+const obj1 = {a:1,b:2} ;
+const obj2 = {b:3 , d:4} ;
+//NOTE Creating a shallow copy
+const obj3 = {...obj1} ;
+
+//NOTE CONCATING TWO OBJECTS ;
+
+const obj4 = {...obj1 , ...obj2} ;
+
+console.log(obj4) ;
+
+//NOTE REST PARAMTER ;
+
+const players = ['a','b','c','d','e'] ;
+
+const [firstPlayer , secondPlayer , ...others] = players ;
+console.log(firstPlayer,secondPlayer,others);
+
+//NOTE When we use ... in the function params it is rest parameter which packs the values in the array .
+
+function sum4(...values){
+    console.log(values)
+    values.forEach((item)=>{
+        console.log(item)
+    })
+
+}
+
+sum4(1,2,3,4) ;
+
+//NOTE -- STRING METHODS 
+const str = 'hello';
+const str2 = 'world'
+//note length of the string;
+console.log('length',str.length) ;
+console.log(str[0])
+//NOTE charAt 
+
+console.log(str.charAt(2))
+
+//NOTE concat => used to concate one string to another
+
+console.log(str.concat(' ',str2))
+
+//includes
+console.log(str.includes('hello'))
+
+//indexOf
+console.log(str.indexOf('l'))
+//lastIndexOf
+console.log(str.lastIndexOf('w'))
+//split
+console.log(str.split(' '))
+//slice
+//REVIEW slice annd substring both work similar but in the case of the startIndex > lastIndex the slice method returns empty  and substring reverse the startindex and lastindex
+
+console.log(str.slice(3,1));
+console.log(str.substring(3,1))
+
+//toUppercase;
+console.log(str.toUpperCase())
+//tolowercase;
+console.log(str.toLowerCase());
+//repeat
+console.log(str.repeat(2))
+//replace
+// console.log(str.replace('hello','bye')) ;
+//NOTE trim
+//NOTE Remove the whitespace from the start and end of the string
+//NOTE trimStart => only remove whiteSpace from the starting
+//NOTE trimEnd => only removes the white space from the last ;
+console.log(str.trim())
+//
+//  const arr4 = ['hello','world'] ;
+//  console.log(arr4.join(' '))
+
+//NOTE INBUILT : DATE OBJECT;
+const date = new Date();
+console.log(date)
+
+console.log(date.getFullYear())
+console.log(date.getDate());
+console.log(date.getTime()) ;
+console.log(date.getMinutes());
+console.log(date.toLocaleDateString());
+console.log(date.toLocaleTimeString())
+
+//INBUILT : MATH OBJECT ;
+
+console.log(Math.abs(-4))
+//REVIEW when the value is less than .5 always round off the lower digit when it is greater of equal to the 5 it always round off the higher digit;
+console.log(Math.round(2.6));
+
+//NOTE trunc()
+
+//NOTE to remove the decimal values from any number
+console.log(Math.trunc(1.7))
+
+//NOTE floor()
+console.log(Math.floor(3.6));
+console.log(Math.floor(-3.1)) ;
+
+//NOTE ceil()
+console.log(Math.ceil(4.5)); 
+
+//NOTE random() 
+console.log(Math.trunc(Math.random() * 10)) ;
+
+
+
+
+
+
+
+
+
+
