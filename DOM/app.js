@@ -153,3 +153,14 @@ form.addEventListener('submit',(event)=>{
  console.log(input.value);
 })
 
+
+//short circuting ;
+// || && 
+console.log(3 && 1); //return last true value if both are true
+console.log(1 || 0);
+console.log(null??10);
+//nullish coaelsing operator ?? 
+
+//asynchronous javascript ;
+
+
