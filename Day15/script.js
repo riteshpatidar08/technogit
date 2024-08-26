@@ -68,12 +68,90 @@
 //another way to create an array in the js
 // const arr2 = new Array();
 // console.log(arr2)
+
 //NOTE directly saving methods on the prototype;
 // Array.prototype.laugh = function(){
 //     console.log('haha')
 // }
 
 // console.log(arr2.laugh()) ;
+
+
+//NOTE - ES6 classes Js ;
+
+// function Animal(name){
+//   this.name = name ;
+//   this.walk = function(){
+//     console.log(`${this.name} is walking`)
+//   }
+// }
+
+//NOTE Converting Above Constructor Function using es6 classes .
+
+//NOTE classes constructor function internally to create a object from that instance 
+//NOTE in the constuctor function we have to manually set the methods on the prototype but with the es6 classes the methods are directly saved to the prototype of that class from it created ;
+
+
+// function Animal(name){
+//   this.name = name ;
+//   this.walk = function(){
+//     console.log(`${this.name} is walking`)
+//   }
+// }
+class Animal{
+    constructor(name){
+this.name = name; 
+    }
+
+ walk(){
+        console.log('animal is walking')
+    } 
+}
+
+const rabbit = new Animal('rabbit');
+
+rabbit.walk()
+
+//Inheritance in the classes ;
+//static methods
+class Lion extends Animal {
+ constructor(name){
+    super(name)
+ }
+static roar(){
+    console.log('lion is roaring')
+ }
+
+}
+
+const lion = new Lion('lion');
+console.log(lion)
+Lion.roar() ;
+
+//Static method is class can be created using static keyword in front of the methods 
+//NOTE static method only called upon directly on the class , it is not work on the instances we have created using that class.
+
+//readonly and private properties and methods
+class Coffeemachine{
+    #wateramount = 100
+    #getwater(){
+        console.log(`coffee machine have ${this.#wateramount}`)
+    }
+
+}
+const coffemachine = new Coffeemachine;
+coffemachine.#wateramount
+coffemachine.#getwater()  
+console.log(coffemachine);
+
+
+
+
+
+
+
+
+
 
 
 
